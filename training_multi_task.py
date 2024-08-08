@@ -27,6 +27,8 @@ if __name__ == "__main__":
     parser.add_argument("--nli_batch_size", type=int, default=64)
     parser.add_argument("--sts_batch_size", type=int, default=8)
     parser.add_argument("--num_epochs", type=int, default=10)
+    parser.add_argument("--eval_steps", type=int, default=1000)
+    parser.add_argument("--learning_rate", type=float, default=2e-5)
     parser.add_argument("--output_dir", type=str, default="output")
     parser.add_argument("--output_prefix", type=str, default="kor_multi_")
     parser.add_argument("--seed", type=int, default=42)
@@ -97,14 +99,14 @@ if __name__ == "__main__":
         train_objectives=train_objectives,
         evaluator=dev_evaluator,
         epochs=args.num_epochs,
-        optimizer_params={"lr": 2e-5},
-        evaluation_steps=1000,
+        optimizer_params={"lr": args.learning_rate},
+        evaluation_steps=args.eval_steps,
         warmup_steps=warmup_steps,
         output_path=model_save_path,
     )
 
     # Load the stored model and evaluate its performance on STS benchmark dataset
-    model = SentenceTransformer(model_save_path)
+    model = SentenceTransformer(model_save_path, trust_remote_code=True)
     logging.info("Read KorSTS benchmark test dataset")
 
     test_file = os.path.join(sts_dataset_path, "sts-test.tsv")
