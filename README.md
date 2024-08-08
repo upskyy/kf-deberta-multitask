@@ -13,15 +13,15 @@ kakaobank의 [kf-deberta-base](https://huggingface.co/kakaobank/kf-deberta-base)
 
 <br>
 
-|model|cosine_pearson|cosine_spearman|euclidean_pearson|euclidean_spearman|manhattan_pearson|manhattan_spearman|dot_pearson|dot_spearman|
-|:-------------------------|-----------------:|------------------:|--------------------:|---------------------:|--------------------:|---------------------:|--------------:|---------------:|
-|[kf-deberta-multitask](https://huggingface.co/upskyy/kf-deberta-multitask)|**85.75**|**86.25**|**84.79**|**85.25**|**84.80**|**85.27**|**82.93**|**82.86**|
-|[ko-sroberta-multitask](https://huggingface.co/jhgan/ko-sroberta-multitask)|84.77|85.6|83.71|84.40|83.70|84.38|82.42|82.33|
-|[ko-sbert-multitask](https://huggingface.co/jhgan/ko-sbert-multitask)|84.13|84.71|82.42|82.66|82.41|82.69|80.05|79.69|
-|[ko-sroberta-base-nli](https://huggingface.co/jhgan/ko-sroberta-nli)|82.83|83.85|82.87|83.29|82.88|83.28|80.34|79.69|
-|[ko-sbert-nli](https://huggingface.co/jhgan/ko-sbert-multitask)|82.24|83.16|82.19|82.31|82.18|82.3|79.3|78.78|
-|[ko-sroberta-sts](https://huggingface.co/jhgan/ko-sroberta-sts)|81.84|81.82|81.15|81.25|81.14|81.25|79.09|78.54|
-|[ko-sbert-sts](https://huggingface.co/jhgan/ko-sbert-sts)|81.55|81.23|79.94|79.79|79.9|79.75|76.02|75.31|
+| model                                                                       | cosine_pearson | cosine_spearman | euclidean_pearson | euclidean_spearman | manhattan_pearson | manhattan_spearman | dot_pearson | dot_spearman |
+| :-------------------------------------------------------------------------- | -------------: | --------------: | ----------------: | -----------------: | ----------------: | -----------------: | ----------: | -----------: |
+| [kf-deberta-multitask](https://huggingface.co/upskyy/kf-deberta-multitask)  |      **85.75** |       **86.25** |         **84.79** |          **85.25** |         **84.80** |          **85.27** |   **82.93** |    **82.86** |
+| [ko-sroberta-multitask](https://huggingface.co/jhgan/ko-sroberta-multitask) |          84.77 |            85.6 |             83.71 |              84.40 |             83.70 |              84.38 |       82.42 |        82.33 |
+| [ko-sbert-multitask](https://huggingface.co/jhgan/ko-sbert-multitask)       |          84.13 |           84.71 |             82.42 |              82.66 |             82.41 |              82.69 |       80.05 |        79.69 |
+| [ko-sroberta-base-nli](https://huggingface.co/jhgan/ko-sroberta-nli)        |          82.83 |           83.85 |             82.87 |              83.29 |             82.88 |              83.28 |       80.34 |        79.69 |
+| [ko-sbert-nli](https://huggingface.co/jhgan/ko-sbert-multitask)             |          82.24 |           83.16 |             82.19 |              82.31 |             82.18 |               82.3 |        79.3 |        78.78 |
+| [ko-sroberta-sts](https://huggingface.co/jhgan/ko-sroberta-sts)             |          81.84 |           81.82 |             81.15 |              81.25 |             81.14 |              81.25 |       79.09 |        78.54 |
+| [ko-sbert-sts](https://huggingface.co/jhgan/ko-sbert-sts)                   |          81.55 |           81.23 |             79.94 |              79.79 |              79.9 |              79.75 |       76.02 |        75.31 |
 
 <br>
 
@@ -185,7 +185,7 @@ cd kf-deberta-multitask
 pip install -r requirements.txt
 
 git clone https://github.com/kakaobrain/kor-nlu-datasets.git
-python bin/benchmark.py
+python bin/benchmark.py --model_name_or_path upskyy/kf-deberta-multitask
 ```
 
 <br>
